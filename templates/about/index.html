@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block hero_unit %}
+
+	{% if latest_about_list %}
+	    {% for about in latest_about_list %}
+			<h1>{{ about.title }}</h1>
+			<p>{{ about.body }}</p>
+			<p><a class="btn btn-primary btn-large" href="#id=about_{{ about.id }}">Learn more »</a></p>
+			
+	    {% endfor %}
+	{% else %}
+			<h2>Something went wrong.</h2>
+			<p>No abouts are available.</p>
+	{% endif %}
+
+
+{% endblock %}
